@@ -13,8 +13,9 @@ A Redux middleware which throttles actions.
 import {createStore, applyMiddleware} from "redux";
 import throttleActions from "redux-throttle-actions";
 import reducers from "./reducers";
+import actionTypes from "./constants/actionTypes";
 
-const middleware = throttleActions([], { ... });
+const middleware = throttleActions([actionTypes.someAction], 500);
 const store = applyMiddleware(middleware)(createStore)(reducers);
 
 // In View

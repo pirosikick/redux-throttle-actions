@@ -1,7 +1,11 @@
 {
   "name": "redux-throttle-actions",
-  "version": "0.0.1",
+  "description": "A Redux middleware which throttles actions",
+  "version": "1.0.0",
   "author": "Hiroyuki ANAI <pirosikick@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/pirosikick/redux-throttle-actions/issues"
+  },
   "dependencies": {
     "lodash": "^3.10.1"
   },
@@ -14,21 +18,31 @@
     "eslint": "^1.8.0",
     "fixpack": "^2.2.0",
     "mocha": "^2.3.3",
+    "redux": "^3.0.4",
     "sinon": "^1.17.2"
   },
   "files": [
-    "*.js",
+    "lib/*.js",
     "package.json"
   ],
+  "homepage": "https://github.com/pirosikick/redux-throttle-actions",
+  "keywords": [
+    "middleware",
+    "redux",
+    "redux-middleware"
+  ],
   "license": "MIT",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pirosikick/redux-throttle-actions.git"
+  },
   "scripts": {
     "build": "babel src -d lib",
     "fixpack": "fixpack",
     "lint": "eslint src test",
+    "prepublish": "npm run test && npm run lint",
     "test": "npm run build && mocha test/ --recursive --compilers js:babel-core/register",
-    "watch": "babel src -d lib -w & mocha --compilers js:babel-core/register -w",
-    "copy": "cp lib/*.js .",
-    "prepublish": "npm run test && npm run lint && npm run copy"
+    "watch": "babel src -d lib -w & mocha --compilers js:babel-core/register -w"
   }
 }

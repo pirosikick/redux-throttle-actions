@@ -3,18 +3,19 @@ import throttle from "lodash/function/throttle";
 import isArray from "lodash/lang/isArray";
 
 /**
- * @param {String|Array} types
- * @param {Number} wait
- * @param {Object} options
+ * @param {String|Array} types The String or Array.
+ * A set of action types to be throttled.
+ * @param {Number} wait The number of milliseconds to throttle actions to.
+ * @param {Object} options The options object for _.throttle.
+ * See also https://lodash.com/docs#throttle.
  */
-function throttleActions(types, wait = 0, options = {}) {
+function throttleActions(types, wait = 0, options = undefined) {
   types = isArray(types) ? types : [types];
 
-  return store => {
-    const dispatch = store.dispatch;
-    const throttled = throttle(dispatch, wait, options);
+  return store => next => {
+    const throttled = throttle(next, wait, options);
 
-    return next => action => {
+    return action => {
       if (types.indexOf(action.type) === -1) {
         return next(action);
       }
@@ -22,3 +23,5 @@ function throttleActions(types, wait = 0, options = {}) {
     }
   }
 }
+
+export default throttleActions;

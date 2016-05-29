@@ -1,6 +1,6 @@
 "use strict";
-import throttle from "lodash/function/throttle";
-import isArray from "lodash/lang/isArray";
+import throttle from "lodash.throttle";
+import isArray from "lodash.isarray";
 
 /**
  * @param {String|Array} types The String or Array.
@@ -9,7 +9,7 @@ import isArray from "lodash/lang/isArray";
  * @param {Object} options The options object for _.throttle.
  * See also https://lodash.com/docs#throttle.
  */
-function throttleActions(types, wait = 0, options = undefined) {
+function throttleActions(types, wait = 0, options) {
   types = isArray(types) ? types : [types];
 
   return store => next => {

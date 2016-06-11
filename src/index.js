@@ -1,5 +1,5 @@
 import throttle from "lodash.throttle";
-import isArray from "lodash.isArray";
+import isArray from "lodash.isarray";
 
 /**
  * @param {String|Array} types The String or Array.

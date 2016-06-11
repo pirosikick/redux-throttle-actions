@@ -1,9 +1,13 @@
 {
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
   "env": {
     "node": true,
-    "mocha": true
+    "mocha": true,
+    "browser": true
   },
-  "parser": "babel-eslint",
   "rules": {
     "comma-dangle": 2,
     "no-cond-assign": [2, "always"],

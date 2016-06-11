@@ -1,4 +1,3 @@
-'use strict';
 import assert from "assert";
 import {createStore, combineReducers, applyMiddleware} from "redux";
 import throttleActions from "../lib/index";

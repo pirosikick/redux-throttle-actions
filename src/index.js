@@ -1,6 +1,5 @@
-"use strict";
-import throttle from "lodash/function/throttle";
-import isArray from "lodash/lang/isArray";
+import throttle from "lodash.throttle";
+import isArray from "lodash.isArray";
 
 /**
  * @param {String|Array} types The String or Array.
